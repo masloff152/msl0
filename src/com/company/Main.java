@@ -12,7 +12,7 @@ public class Main {
 
         JFrame frame1 = new JFrame("EGC");
         JFrame frame2 = new JFrame( "Главное меню");
-        frame1.setBounds(500,200, 400, 400 );
+        frame1.setBounds(500,200, 400, 400 ); //Код исправлен, класс
         frame1.setVisible(true);
         frame2.setBounds(500, 200, 400, 400);
 
