@@ -12,31 +12,27 @@ public class Main {
 
         JFrame frame1 = new JFrame("EGC");
         JFrame frame2 = new JFrame( "Главное меню");
-        frame1.setBounds(500,200, 400, 400 );
+        frame1.setBounds(500,200, 400, 400 ); //Код исправлен, класс
         frame1.setVisible(true);
         frame2.setBounds(500, 200, 400, 400);
 
 
         Container contentPane = frame1.getContentPane();
         Container contentPane1 = frame2.getContentPane();
-        Container contentPane2 = frame2.getContentPane();
-        Container contentPane3 = frame2.getContentPane();
+
         contentPane.setPreferredSize(new Dimension(800,700));
         contentPane1.setPreferredSize(new Dimension(1800,1700));
 
         SpringLayout layout = new SpringLayout();
         SpringLayout layout1 = new SpringLayout();
-        SpringLayout layout2 = new SpringLayout();
-        SpringLayout layout3 = new SpringLayout();
+
         contentPane.setLayout(layout);
         contentPane1.setLayout(layout1);
-        contentPane2.setLayout(layout2);
-        contentPane3.setLayout(layout3);
 
 
 
-        JTextField textField = new JTextField();
-        JTextField textField1 = new JTextField();
+
+
 
 
         JButton button = new JButton("ВХОД");
@@ -44,22 +40,24 @@ public class Main {
         JButton button2 = new JButton ("888");
         JButton button3 = new JButton("999");
 
+        Component label = new JLabel("Логин");
+        JTextField field = new JTextField();
+
+        Component label1 = new JLabel("Пароль");
+        JTextField field1 = new JTextField();
+
+        field.setPreferredSize(new Dimension(100,25));
+        field1.setPreferredSize(new Dimension(100,25));
         button.addActionListener(new ActionListener() {
-            String login = textField.getText();
-            String password = textField1.getText();
+
             public void actionPerformed(ActionEvent event) {
-                if (login.equals("admin") && password.equals("admin"))
+                if (field.getText().equals("admin") && field1.getText().equals("admin"))
                     frame2.setVisible(true);
             }
         });
         frame1.add(button);
 
 
-        Component label = new JLabel("Логин");
-        Component field = new JTextField(15);
-
-        Component label1 = new JLabel("Пароль");
-        Component field1 = new JTextField(15);
 
         contentPane.add(label);
         contentPane.add(field);
@@ -111,13 +109,13 @@ public class Main {
         contentPane1.add(button1);
         contentPane1.setLayout(layout1);
         layout1.putConstraint(SpringLayout.WEST , button1, 165,
-                SpringLayout.WEST , contentPane2);
+                SpringLayout.WEST , contentPane);
         layout1.putConstraint(SpringLayout.NORTH, button1, 100,
-                SpringLayout.NORTH, contentPane2);
+                SpringLayout.NORTH, contentPane);
         layout1.putConstraint(SpringLayout.WEST, button2, 165,
-                SpringLayout.WEST, contentPane2);
+                SpringLayout.WEST, contentPane);
         layout1.putConstraint(SpringLayout.NORTH, button2, 140,
-                SpringLayout.NORTH, contentPane2);
+                SpringLayout.NORTH, contentPane);
 
 
 
